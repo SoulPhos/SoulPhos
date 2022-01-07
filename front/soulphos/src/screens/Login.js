@@ -49,12 +49,12 @@ const Login = (props) => {
 
                         <FindContainer>
                             <FindId>아이디 찾기</FindId>
-                            |
+                         |
                             <FindPassword>비밀번호 재설정</FindPassword>
                         </FindContainer>
 
                         <JoinContainer>
-                            <JoinTxt>컴바존에 가입하지 않으셨나요? </JoinTxt>
+                            <JoinTxt>솔포스에 가입하지 않으셨나요? </JoinTxt>
                             <JoinBtn>회원가입</JoinBtn>
                         </JoinContainer>
 
@@ -77,38 +77,35 @@ const Container = styled.div`
 const InnerContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 1280px;
-    height: 797px;
+    width: 80%;
+    height: 100%;
 `;
 
 const HeaderContainer = styled.div`
-    width: 1280px;
-    height: 120px;
+    width: 100%;
+    height: 60px;
     background-color: green;
 `;
 
 const FooterContainer = styled.div`
-    width: 1280px;
-    height: 120px;
+    width: 100%;
+    height: 80px;
     background-color: #000;
     border: 1px solid;
 `;
 
 const ContentContainer = styled.div`
-    width: 1280px;
+    width: 100%;
     height: 797px;
-    border: 1px solid;
+    //border: 1px solid;
     display: flex;
+    justify-content: center;
     align-items: center;
 `;
 
 const LoginContainer = styled.div`
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    margin-left: 400px;
-    //margin-top: 150px;
-    //border: 1px solid;
+    width: 50%;
+    margin-top: -100px;
 `;
 
 const LogoTxt = styled.div`
@@ -123,22 +120,32 @@ const SmallTxt = styled.div`
     font-size: 14px;
     margin-top: 5px;   
     color: ${style.black};
+
+    @media screen and (max-width: 775px){
+        font-size: 10px;
+     }
 `;
 
 const LoginBtn = styled.div`
-    width: 372px;
+    width: 70%;
     height: 40px;
     margin-top: 10px;    
     margin-left: 13%;
     background: ${style.repBlue};
     color: ${style.white};
     text-align: center;
-    padding-top: 5px;
+    padding: 5px 5px 5px 15px;
     font-size: 22px;
 
     &: hover{
         cursor: grab;
     }
+
+    @media screen and (max-width: 775px){
+        height: 20px;
+        font-size: 15px;
+        padding: 5px 5px 5px 14px;
+     }
 `;
 
 const FindContainer = styled.div`
@@ -148,6 +155,10 @@ const FindContainer = styled.div`
     margin-top: 10px;
     text-align: center;
     font-weight: bold;
+
+    @media screen and (max-width: 775px){
+        font-size: 10px;
+    }
 `;
 
 const FindId = styled.div`
@@ -155,6 +166,10 @@ const FindId = styled.div`
 
     &: hover{
         cursor: grab;
+    }
+
+    @media screen and (max-width: 492px){
+        margin-left: 16px;
     }
 `;
 
@@ -165,6 +180,10 @@ const FindPassword = styled.div`
     &: hover{
         cursor: grab;
     }
+    
+    @media screen and (max-width: 492px){
+        margin-right: 8px;
+    }
 `;
 
 const JoinContainer = styled.div`
@@ -172,12 +191,27 @@ const JoinContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     margin-top: 5px;
-  //  text-align: center;
+    text-align: center;
+
+    @media screen and (max-width: 775px){
+        font-size: 10px;
+    }
+
+    @media screen and (max-width: 492px){
+         width: 100%;
+         flex-direction: column;
+         font-size: 3px;
+         text-align: left;
+         margin-left: 22px;
+    }
 `;
 
 const JoinTxt = styled.div`
     width: 250px;
-    margin-left: 60px;
+
+    @media screen and (max-width: 492px){
+        margin-left: 5px;
+    }
 `;
 
 const JoinBtn = styled.div`
@@ -187,7 +221,12 @@ const JoinBtn = styled.div`
     &: hover{
         cursor: grab;
     }
+
+    @media screen and (max-width: 492px){
+        margin-left: 50px;
+    }
 `;
+
 const styles = {
     phone: {
         width: '70%',
