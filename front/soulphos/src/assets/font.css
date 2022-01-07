@@ -5,11 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
 
 * {
     /* font-weight: 600; */
-     font-family: 'Jua', sans-serif;
+     font-family: 'Noto Sans KR', sans-serif;
 } 
 
 .Hahmlet {
@@ -38,4 +41,16 @@
 
 .Nanum_Pen_Script {
     font-family: 'Nanum Pen Script', sans-serif;
+}
+
+.Nanum_Gothic {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.Noto_Sans_KR {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.Do_Hyeon {
+    font-family: 'Do Hyeon', sans-serif;
 }
