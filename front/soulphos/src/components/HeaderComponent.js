@@ -3,7 +3,6 @@ import { useMediaQuery } from "react-responsive"
 import styled from 'styled-components';
 import { IoIosMenu } from "react-icons/io";
 import { useHistory } from 'react-router';
-import FooterComponent from './FooterComponent';
 
 const HeaderComponent = (props) => {
     const [isLogin, setIsLogin] = useState(false); // 로그인 여부 관리하는 상태 값 
