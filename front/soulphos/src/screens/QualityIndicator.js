@@ -1,28 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate  } from 'react-router';
+import { useSelector, useDispatch } from "react-redux";
 import styled from 'styled-components';
 import style from '../styles/style';
-import BannerComponent from '../components/BannerComponent';
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
-//import { useLocation, useHistory } from 'react-router';
 
-const Main = (props) => {
-    //const location = useLocation();
-    //const history = useHistory();
-
-    const [isLogin, setIsLogin] = useState(false);
-
-    var size = { width: window.innerWidth || document.body.clientWidth, height: window.innerHeight || document.body.clientHeight };
+const QualityIndicator = (props) => {
+    const is_login = useSelector((state) => state.user.is_login); // 로그인 여부 관리하는 상태 값
 
     return (
         <Container>
             <InnerContainer>
 
                 <HeaderComponent />
-                <ContentContainer>
-
-                    <BannerComponent />
-
+                <ContentContainer>  
+                    품질지표 페이지 준비중입니다.
                 </ContentContainer>
                 <FooterComponent />
 
@@ -44,25 +37,12 @@ const InnerContainer = styled.div`
     height: 100%;
 `;
 
-const HeaderContainer = styled.div`
-    width: 100%;
-    height: 60px;
-    background-color: green;
-`;
-
-const FooterContainer = styled.div`
-    width: 100%;
-    height: 80px;
-    background-color: #000;
-    border: 1px solid;
-`;
-
 const ContentContainer = styled.div`
     width: 100%;
     height: 797px;
-    //border: 1px solid;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: center; 
 `;
 
-export default Main;
+export default QualityIndicator;

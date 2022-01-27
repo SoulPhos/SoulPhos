@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate  } from 'react-router';
 import styled from 'styled-components';
 import style from '../styles/style';
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
 
 const MypageVerify = (props) => {
+
+    const navigate  = useNavigate();
+
     const [isLogin, setIsLogin] = useState(false);
     const [password, setPassword] = useState('');
 
@@ -13,7 +17,7 @@ const MypageVerify = (props) => {
     };
 
     function ConfirmClick() {
-        alert('확인 클릭!');
+        navigate(`/mypage`);
     }
 
     return (

@@ -1,15 +1,17 @@
 import React from 'react';
+import { IoMdPerson } from "react-icons/io";
+import { IoIosRemoveCircle } from "react-icons/io";
+import { useLocation, useNavigate  } from 'react-router';
 import styled from 'styled-components';
 import style from '../styles/style';
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
-import { IoMdPerson } from "react-icons/io";
-import { IoIosRemoveCircle } from "react-icons/io";
 
 const Mypage = (props) => {
-    
+    const navigate  = useNavigate();
+
     function ModifyInfoClick() {
-        alert('내 정보 수정 클릭!');
+        navigate(`/mypagemodify`);
     }
 
     function CashClick() {
@@ -123,9 +125,7 @@ const ContentContainer = styled.div`
     height: 797px;
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    
+    align-items: center; 
 `;
 
 const MypageContainer = styled.div`
