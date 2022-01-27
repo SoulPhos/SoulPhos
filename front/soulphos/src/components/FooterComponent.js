@@ -7,9 +7,7 @@ const FooterComponent = (props) => {
             
         <FooterContainer>
                 <FooterContent>(주) 솔포스</FooterContent>
-                <FooterContent>서울 광나루로 9가길 10 대표이사 김창선</FooterContent>
-                <FooterContent>TEL: 010-5309-7884 </FooterContent>
-                <FooterContent>MAIL: petercskim01@naver.com</FooterContent>
+                <FooterContent>MAIL: soulphos22@gmail.com</FooterContent>
                 <FooterContent>COPYRIGHT ⓒ SOULPHOS COMPANY. ALL RIGHTS RESERVED.</FooterContent>   
         </FooterContainer>      
             

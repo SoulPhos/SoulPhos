@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import {actionCreators as userActions} from "../redux/modules/user";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate  } from 'react-router';
 import styled from 'styled-components';
 import style from '../styles/style';
+import HeaderComponent from '../components/HeaderComponent';
+import FooterComponent from '../components/FooterComponent';
 
 const Login = (props) => {
-    const [isLogin, setIsLogin] = useState(false);
+    const dispatch = useDispatch();
+    const navigate  = useNavigate();
+    
 
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
@@ -16,7 +23,10 @@ const Login = (props) => {
     };
 
     function LoginClick() {
-        alert('클릭 로그인!');
+        alert('환영합니다.');
+
+        navigate("/");
+        dispatch(userActions.loginAction({user_name: "user_name"}));
     }
 
     var size = { width: window.innerWidth || document.body.clientWidth, height: window.innerHeight || document.body.clientHeight };
@@ -25,7 +35,7 @@ const Login = (props) => {
         <Container>
             <InnerContainer>
 
-                <HeaderContainer />
+                <HeaderComponent />
                 <ContentContainer>
                     <LoginContainer>
                         <LogoTxt>SoulPhos</LogoTxt>
@@ -61,7 +71,7 @@ const Login = (props) => {
                     </LoginContainer>
 
                 </ContentContainer>
-                <FooterContainer />
+                <FooterComponent />
 
             </InnerContainer>
         </Container>

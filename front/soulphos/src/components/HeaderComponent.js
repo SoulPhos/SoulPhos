@@ -2,16 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from "react-responsive"
 import styled from 'styled-components';
 import { IoIosMenu } from "react-icons/io";
-import { useHistory } from 'react-router';
+import { useLocation, useNavigate  } from 'react-router';
+
+import { useSelector, useDispatch } from "react-redux";
+import { actionCreators as userActions } from "../redux/modules/user";
 
 const HeaderComponent = (props) => {
-    const [isLogin, setIsLogin] = useState(false); // 로그인 여부 관리하는 상태 값 
+
+    const dispatch = useDispatch();
+    const is_login = useSelector((state) => state.user.is_login); // 로그인 여부 관리하는 상태 값
+    const navigate  = useNavigate();
     const [sideMenu, setsideMenu] = useState(null); // 사이드 메뉴 관리하는 상태 값 
     const [menu, setMenu] = useState(false) // reactHooks    
     const [currentClick, setCurrentClick] = React.useState(null);
     const [prevClick, setPrevClick] = React.useState(null);
-
-    //const history = useHistory();
 
     const isPc = useMediaQuery({
         query : "(min-width:1024px)"
@@ -19,25 +23,36 @@ const HeaderComponent = (props) => {
 
     const MenuItemClick = (e) => {
         setCurrentClick(e.target.id); // 해당 엘리먼트의 id값
-        alert(e.target.id + " 눌렸습니다.")
-        //history.push(`/${e.target.id}`);
+        //alert(e.target.id + " 눌렸습니다.")
+
+        if(e.target.id === "qualityindicator" && is_login === false){
+            alert("로그인이 필요한 서비스입니다.")
+            navigate(`/login`);
+        }else{
+            navigate(`/${e.target.id}`);
+        }
     };
 
-    if(isLogin){
+    const LogOut = () => {
+        navigate("/");
+        dispatch(userActions.logOut({}));
+    }
+
+    if(is_login){
         return (
             <HeaderContainer>
                 {isPc? 
                     <PcContainer>
-                        <Home>SoulPhos</Home>
+                        <Home id="" onClick={MenuItemClick}>SoulPhos</Home>
                         <MenuBox>
-                            <Menu id="introduction" onClick={MenuItemClick}>기업소개</Menu>
+                            <Menu id="companyintroduction" onClick={MenuItemClick}>기업소개</Menu>
                             <Menu id="use" onClick={MenuItemClick}>사용법</Menu>
-                            <Menu id="performance" onClick={MenuItemClick}>품질지표</Menu>
-                            <Menu id="quality" onClick={MenuItemClick}>성능지표</Menu>
+                            <Menu id="qualityindicator" onClick={MenuItemClick}>품질지표</Menu>
+                            <Menu id="performanceindicator" onClick={MenuItemClick}>성능지표</Menu>
                         </MenuBox>
                         <LogBox>
-                            <Log id="logout" onClick={MenuItemClick}>로그아웃</Log>  
-                            <Log id="mypage" onClick={MenuItemClick}>마이페이지</Log>  
+                            <Log id="logout" onClick={LogOut}>로그아웃</Log>  
+                            <Log id="mypageverify" onClick={MenuItemClick}>마이페이지</Log>  
                         </LogBox> 
                     </PcContainer>
                     :
@@ -57,12 +72,12 @@ const HeaderComponent = (props) => {
         <HeaderContainer>
                 {isPc? 
                     <PcContainer>
-                        <Home>SoulPhos</Home>
+                        <Home id="" onClick={MenuItemClick}>SoulPhos</Home>
                         <MenuBox>
-                            <Menu id="introduction" onClick={MenuItemClick}>기업소개</Menu>
+                            <Menu id="companyintroduction" onClick={MenuItemClick}>기업소개</Menu>
                             <Menu id="use" onClick={MenuItemClick}>사용법</Menu>
-                            <Menu id="performance" onClick={MenuItemClick}>품질지표</Menu>
-                            <Menu id="quality" onClick={MenuItemClick}>성능지표</Menu>
+                            <Menu id="qualityindicator" onClick={MenuItemClick}>품질지표</Menu>
+                            <Menu id="performanceindicator" onClick={MenuItemClick}>성능지표</Menu>
                         </MenuBox>
                         <LogBox>
                             <Log id="login" onClick={MenuItemClick}>로그인</Log>  

@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate  } from 'react-router';
+import Modal from 'react-modal';
 import styled from 'styled-components';
 import style from '../styles/style';
 import HeaderComponent from '../components/HeaderComponent';
 import FooterComponent from '../components/FooterComponent';
-import Modal from 'react-modal';
 
 const MypageModify = (props) => {
+    const navigate  = useNavigate();
+
     const [isLogin, setIsLogin] = useState(false);
     
     const [name, setName] = React.useState("정세운"); // 이름 입력
@@ -78,7 +81,8 @@ const MypageModify = (props) => {
     };
 
     function modifyClick() {
-        alert('수정 클릭!');
+        alert('수정이 완료되었습니다.');
+        navigate("/mypage");
     }
 
     function secessionClick() {

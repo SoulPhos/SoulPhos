@@ -2,8 +2,14 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import style from '../styles/style';
 import BannerComponent from '../components/BannerComponent';
+import HeaderComponent from '../components/HeaderComponent';
+import FooterComponent from '../components/FooterComponent';
+//import { useLocation, useHistory } from 'react-router';
 
 const Main = (props) => {
+    //const location = useLocation();
+    //const history = useHistory();
+
     const [isLogin, setIsLogin] = useState(false);
 
     var size = { width: window.innerWidth || document.body.clientWidth, height: window.innerHeight || document.body.clientHeight };
@@ -12,13 +18,13 @@ const Main = (props) => {
         <Container>
             <InnerContainer>
 
-                <HeaderContainer />
+                <HeaderComponent />
                 <ContentContainer>
 
                     <BannerComponent />
 
                 </ContentContainer>
-                <FooterContainer />
+                <FooterComponent />
 
             </InnerContainer>
         </Container>
