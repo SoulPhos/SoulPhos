@@ -45,7 +45,7 @@ const HeaderComponent = (props) => {
                     <PcContainer>
                         <Home id="" onClick={MenuItemClick}>SoulPhos</Home>
                         <MenuBox>
-                            <Menu id="companyintroduction" onClick={MenuItemClick}>기업소개</Menu>
+                            <Menu id="" onClick={MenuItemClick}>기업소개</Menu>
                             <Menu id="use" onClick={MenuItemClick}>사용법</Menu>
                             <Menu id="qualityindicator" onClick={MenuItemClick}>품질지표</Menu>
                             <Menu id="performanceindicator" onClick={MenuItemClick}>성능지표</Menu>
@@ -74,7 +74,9 @@ const HeaderComponent = (props) => {
                     <PcContainer>
                         <Home id="" onClick={MenuItemClick}>SoulPhos</Home>
                         <MenuBox>
-                            <Menu id="companyintroduction" onClick={MenuItemClick}>기업소개</Menu>
+                            {/* 추후에 다른 페이지 연결 필요
+                            <Menu id="companyintroduction" onClick={MenuItemClick}>기업소개</Menu>*/}
+                            <Menu id="" onClick={MenuItemClick}>기업소개</Menu>
                             <Menu id="use" onClick={MenuItemClick}>사용법</Menu>
                             <Menu id="qualityindicator" onClick={MenuItemClick}>품질지표</Menu>
                             <Menu id="performanceindicator" onClick={MenuItemClick}>성능지표</Menu>
